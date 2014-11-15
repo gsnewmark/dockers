@@ -1,4 +1,4 @@
-# docker-jmeter
+#jmeter
 
 A Docker image with jmeter (Ubuntu, Java 8).
 
