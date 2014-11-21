@@ -2,9 +2,12 @@
 
 if [ "$RABBITMQ_CLUSTER_COOKIE" != "" ]; then
     echo -n "$RABBITMQ_CLUSTER_COOKIE" > /var/lib/rabbitmq/.erlang.cookie
-    chown rabbitmq /var/lib/rabbitmq/.erlang.cookie
+    chown rabbitmq:rabbitmq /var/lib/rabbitmq/.erlang.cookie
     chmod 600 /var/lib/rabbitmq/.erlang.cookie
 fi
+
+chown -R rabbitmq:rabbitmq /data/mnesia
+chown -R rabbitmq:rabbitmq /data/log
 
 if [ "$RABBITMQ_CLUSTER_CONNECT_TO" = "" ]; then
     exec /usr/sbin/rabbitmq-server "$@"
