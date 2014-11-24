@@ -9,13 +9,6 @@ fi
 chown -R rabbitmq:rabbitmq /data/mnesia
 chown -R rabbitmq:rabbitmq /data/log
 
-
-if [ "$RABBITMQ_CLUSTER_NODE_HOSTNAME" = "" ]; then
-    HOSTNAME=$(hostname --ip-address)
-else
-    HOSTNAME=$RABBITMQ_CLUSTER_NODE_HOSTNAME
-fi
-
 if [ "$RABBITMQ_CLUSTER_CONNECT_TO" = "" ]; then
     exec /usr/sbin/rabbitmq-server "$@"
 else

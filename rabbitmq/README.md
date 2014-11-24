@@ -14,6 +14,3 @@ A couple of environment variables is used to add a node to the cluster:
 
 - `RABBITMQ_CLUSTER_RAM_NODE` if set to true node would be added to cluster as
   a RAM node (otherwise it would be added as a disk node)
-
-- `RABBITMQ_CLUSTER_NODE_HOSTNAME` would be used as a node's name (by default
-  output of `hostname --ip-address` is used)
