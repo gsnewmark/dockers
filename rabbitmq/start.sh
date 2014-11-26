@@ -14,7 +14,7 @@ if [ "$RABBITMQ_CLUSTER_CONNECT_TO" = "" ]; then
 else
     LOG_FILE=/data/log/${hostname}-nohup.log
     nohup /usr/sbin/rabbitmq-server "$@" > $LOG_FILE &
-    sleep 5
+    sleep 10
     rabbitmqctl stop_app
     if [ "$RABBITMQ_CLUSTER_RAM_NODE" = "true" ]; then
         rabbitmqctl join_cluster --ram $RABBITMQ_CLUSTER_CONNECT_TO
